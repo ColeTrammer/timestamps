@@ -25,8 +25,8 @@ app.get("/:date", (req, res) => {
     });
 });
 
-app.listen(3000);
-//app.listen(process.env.PORT);
+//app.listen(3000);
+app.listen(process.env.PORT || 5000);
 
 function getReadableDate(date) {
     if (date.toString() === "Invalid Date") {
