@@ -5,6 +5,10 @@ const app = express();
 const months = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
 
+app.get("/", (req, res) => {
+    res.send("Enter a unix time or date in the url after a slash to use this service.");
+});
+
 app.get("/:date", (req, res) => {
     let date = null;
     const input = req.params.date;
@@ -21,7 +25,8 @@ app.get("/:date", (req, res) => {
     });
 });
 
-app.listen(process.env.PORT);
+app.listen(3000);
+//app.listen(process.env.PORT);
 
 function getReadableDate(date) {
     if (date.toString() === "Invalid Date") {
